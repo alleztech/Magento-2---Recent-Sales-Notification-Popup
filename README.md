@@ -2,7 +2,9 @@
 
 <h2>Introduction</h2>
 
-Hi All! Sales Notification is a very useful tools for promoting your best selling items. I developed it in Magento 2.4.6 and also works in Magento 2.3. Please feel free to comment and use it.
+Hi All! I am Alan :) 
+
+Sales Notification is a very useful tools for promoting your best selling items. I develop it in Magento 2.4.6 and also works in Magento 2.3. Please feel free to comment and use it.
 <br>
 <br>
 <img src="https://www.alleztech.com/assets/salesnotification/Alleztech-Magento2-Sales-Notification-1.png"><br>
