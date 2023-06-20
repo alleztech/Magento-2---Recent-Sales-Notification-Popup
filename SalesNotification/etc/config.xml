@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <salesnotification>
+            <general>
+                <enable>0</enable>
+                <howlong>10</howlong>
+                <type_select>random_cat</type_select>
+                <position_select>bottom_left</position_select>
+                <key>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ99483</key>
+            </general>
+        </salesnotification>
+    </default>
+</config>

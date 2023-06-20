@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="alleztech" translate="label" sortOrder="10">
+            <label>AllezTech</label>
+        </tab>
+        <section id="salesnotification" translate="label" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Recent Sales Notification</label>
+            <tab>alleztech</tab>
+            <resource>AllezTech_SalesNotification::salesnotification_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="howlong" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Delay for next display</label>
+                    <comment>Next Notification show in seconds</comment>
+                </field>
+                <field id="position_select" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <source_model>AllezTech\SalesNotification\Model\Config\OptionsPositionVal</source_model>
+                    <validate>validate-select</validate>
+                </field>
+                <field id="type_select" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Random Option</label>
+                    <source_model>AllezTech\SalesNotification\Model\Config\OptionsTypeVal</source_model>
+                    <validate>validate-select</validate>
+                </field>
+                <field id="productids" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Product IDs in Random [Homepage / CMS Page will use the belows] </label>
+                    <comment>comma separate, e.g 10,20,21,23,30</comment>
+                </field>
+                <field id="key" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Encryption Key</label>
+                    <comment>for Encrypting frontend information if necessary</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

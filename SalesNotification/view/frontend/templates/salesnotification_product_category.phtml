@@ -1,0 +1,18 @@
+<?php
+$currentProduct = $block->getCurrentProduct();
+$currentCategory = $block->getCurrentCategory();
+?>
+
+<a href="" id="notify_product_url" class="notify_product_url">  
+<div id="contentNotification" class="contentNotification <?=$block->getPosition()?>" style="display:none">
+  <img id="notifiy_product_img" class='notifiy_product_img' src="" >
+  <span class="notify_product_message">Our customer purchased a</span><br>
+  <span class="notify_product_name" id="notify_product_name"></span><br>
+  <span class="purchase_ago"></span>
+</div>
+</a>
+<script>
+  window.getHowLong = <?=$block->getHowLong(); ?>;
+  window.salesnotification_enable = <?=$block->getStatus(); ?>;
+  window.salesnotification_current_catID = <?=$currentCategory->getId(); ?>;
+</script>
