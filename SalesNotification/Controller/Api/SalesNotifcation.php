@@ -9,27 +9,33 @@ class SalesNotifcation extends \Magento\Framework\App\Action\Action
 
     protected $imageHelper;
     protected $request;
+    protected $_pageFactory;
+    protected $resultJsonFactory;
+    protected $_scopeConfig;
+    protected $_productloader;
+    protected $_productCollectionFactory;
+    protected $_salesNotificationData;
 
     public function __construct(
 		\Magento\Framework\App\Action\Context $context,
-		\Magento\Framework\View\Result\PageFactory $pageFactory,
+		\Magento\Framework\View\Result\PageFactory $_pageFactory,
 		\Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
 		\Magento\Framework\App\Config\ScopeConfigInterface $_scopeConfig,
         \Magento\Catalog\Model\ProductFactory $_productloader,
-        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
+        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $_productCollectionFactory,
         \Magento\Framework\App\Request\Http $request,
         \Magento\Catalog\Helper\Image $imageHelper, 
-        \AllezTech\SalesNotification\Helper\Data $salesNotificationData,
+        \AllezTech\SalesNotification\Helper\Data $_salesNotificationData,
 		)
 	{
-		$this->_pageFactory = $pageFactory;
+		$this->_pageFactory = $_pageFactory;
 		$this->resultJsonFactory = $resultJsonFactory;
 		$this->_scopeConfig = $_scopeConfig;
         $this->_productloader = $_productloader;
-        $this->_productCollectionFactory = $productCollectionFactory;
+        $this->_productCollectionFactory = $_productCollectionFactory;
         $this->request = $request;
         $this->imageHelper = $imageHelper;
-        $this->_salesNotificationData = $salesNotificationData;
+        $this->_salesNotificationData = $_salesNotificationData;
 		return parent::__construct($context);
 	}
 

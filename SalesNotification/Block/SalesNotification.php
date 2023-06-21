@@ -5,19 +5,25 @@ namespace AllezTech\SalesNotification\Block;
 
 class SalesNotification extends \Magento\Framework\View\Element\Template {
     
-    protected $registry;
+    protected $context;
+    protected $_registry;
+    protected $_productloader;
+    protected $_salesNotificationData;
+
 
 
     public function __construct(
         \Magento\Catalog\Block\Product\Context $context,
-        \Magento\Framework\Registry $registry,
+        \Magento\Framework\Registry $_registry,
         \Magento\Catalog\Model\ProductFactory $_productloader,
-        \AllezTech\SalesNotification\Helper\Data $salesNotificationData,
+        \Magento\Framework\App\Config\ScopeConfigInterface $_scopeConfig,
+        \AllezTech\SalesNotification\Helper\Data $_salesNotificationData,
         array $data = []) 
     {
-        $this->_registry = $registry;
+        $this->_registry = $_registry;
         $this->_productloader = $_productloader;
-        $this->_salesNotificationData = $salesNotificationData;
+        $this->_scopeConfig = $_scopeConfig;
+        $this->_salesNotificationData = $_salesNotificationData;
         parent::__construct($context, $data);
     }
 

@@ -8,16 +8,17 @@ class Data extends AbstractHelper
     protected $_checkoutSession;
     protected $_orderFactory;
     protected $_scopeConfig;
+    protected $_orderCollectionFactory;
 
     public function __construct(
         \Magento\Checkout\Model\Session $checkoutSession,
-        \Magento\Sales\Model\OrderFactory $orderFactory,
-        \Magento\Sales\Model\ResourceModel\Order\CollectionFactory $orderCollectionFactory,
+        \Magento\Sales\Model\OrderFactory $_orderFactory,
+        \Magento\Sales\Model\ResourceModel\Order\CollectionFactory $_orderCollectionFactory,
         \Magento\Framework\View\Element\Context $context
     ) {
         $this->_checkoutSession = $checkoutSession;
-        $this->_orderFactory = $orderFactory;
-        $this->_orderCollectionFactory = $orderCollectionFactory;
+        $this->_orderFactory = $_orderFactory;
+        $this->_orderCollectionFactory = $_orderCollectionFactory;
         $this->_scopeConfig = $context->getScopeConfig();
     }
 
