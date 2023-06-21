@@ -113,7 +113,7 @@ class SalesNotifcation extends \Magento\Framework\App\Action\Action
                     $productId = $_item->getProductId();
                 }
                 $array = array($productId);
-                $sn = md5($order->getId().$key);
+                $sn = hash('sha256', $order->getId().$key);
                
             } else {
                 $array = explode (",", $array_from_conf); 
